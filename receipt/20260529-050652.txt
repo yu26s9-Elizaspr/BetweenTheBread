@@ -1,0 +1,17 @@
+====================================
+         BETWEEN THE BREAD
+====================================
+Date: 2026-05-29T05:06:52.762098
+
+Payment Method: DEBIT
+
+FOUR_INCH sandwich on WHITE bread
+Toasted: yes
+Toppings: HAM, CHEDDAR
+Sides: AU_JUS
+Price: $7.25
+
+
+------------------------------------
+TOTAL: $7.25
+====================================

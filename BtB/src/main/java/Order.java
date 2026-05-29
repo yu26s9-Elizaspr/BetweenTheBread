@@ -5,6 +5,8 @@ import java.util.List;
 public class Order {
 
     private LocalDateTime orderTime;
+    private PaymentType paymentType;
+
 
     private List<Sandwhich> sandwiches;
     private List<Drink> drinks;
@@ -28,6 +30,14 @@ public class Order {
 
     public void addChip(Chip chip) {
         chips.add(chip);
+    }
+
+    public PaymentType getPaymentType() {
+        return paymentType;
+    }
+
+    public void setPaymentType(PaymentType paymentType) {
+        this.paymentType = paymentType;
     }
 
     public double calculateOrderTotal() {
@@ -81,6 +91,7 @@ public class Order {
         receipt += "====================================\n";
 
         receipt += "Date: " + orderTime + "\n\n";
+        receipt += "Payment Method: " + paymentType + "\n\n";
 
         for (Sandwhich sandwich : sandwiches) {
             receipt += sandwich + "\n\n";

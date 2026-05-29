@@ -1,0 +1,17 @@
+====================================
+         BETWEEN THE BREAD
+====================================
+Date: 2026-05-29T05:12:26.673728
+
+Payment Method: CASH
+
+FOUR_INCH sandwich on RYE bread
+Toasted: yes
+Toppings: CHICKEN, Extra CHICKEN, CHEDDAR, LETTUCE, TOMATOES, GUACAMOLE
+Sauces: VINAIGRETTE
+Price: $7.75
+
+
+------------------------------------
+TOTAL: $7.75
+====================================

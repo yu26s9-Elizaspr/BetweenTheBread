@@ -392,24 +392,42 @@ public class UserInterface {
         }
     }
 
+    private void choosePaymentMethod() {
+        System.out.println("\nSelect Payment Method:");
+        System.out.println("1) Cash");
+        System.out.println("2) Debit");
+        System.out.println("3) Credit");
+        System.out.print("Choice: ");
+
+        switch (scanner.nextLine()) {
+            case "1":
+                currentOrder.setPaymentType(PaymentType.CASH);
+                break;
+            case "2":
+                currentOrder.setPaymentType(PaymentType.DEBIT);
+                break;
+            case "3":
+                currentOrder.setPaymentType(PaymentType.CREDIT);
+                break;
+            default:
+                System.out.println("Invalid payment method. Defaulting to cash.");
+                currentOrder.setPaymentType(PaymentType.CASH);
+        }
+    }
+
     public void checkout() {
         if (!currentOrder.isValidOrder()) {
             System.out.println("Order is empty.");
             return;
         }
 
+        choosePaymentMethod();
+
         System.out.println("\n=== Checkout ===");
         System.out.println(currentOrder);
 
         System.out.print("Confirm order? yes/no: ");
         String confirm = scanner.nextLine().trim();
-
-        while (!confirm.equalsIgnoreCase("yes") &&
-                !confirm.equalsIgnoreCase("no")) {
-
-            System.out.print("Please enter yes or no: ");
-            confirm = scanner.nextLine().trim();
-        }
 
         if (confirm.equalsIgnoreCase("yes")) {
             ReceiptWriter writer = new ReceiptWriter();
