@@ -125,8 +125,21 @@ public class UserInterface {
         BreadType breadType = chooseBreadType();
         if (breadType == null) return;
 
-        System.out.print("Would you like it toasted? (yes/no): ");
-        boolean toasted = scanner.nextLine().equalsIgnoreCase("yes");
+        String input;
+
+        while (true) {
+            System.out.print("Would you like it toasted? (yes/no): ");
+            input = scanner.nextLine().trim();
+
+            if (input.equalsIgnoreCase("yes") ||
+                    input.equalsIgnoreCase("no")) {
+                break;
+            }
+
+            System.out.println("Invalid option. Please enter yes or no.");
+        }
+
+        boolean toasted = input.equalsIgnoreCase("yes");
 
         Sandwhich sandwhich = new Sandwhich(size, breadType, toasted);
 
@@ -225,8 +238,21 @@ public class UserInterface {
 
         sandwich.addTopping(new Meat(meatType, false));
 
-        System.out.print("Extra meat? yes/no: ");
-        boolean extra = scanner.nextLine().equalsIgnoreCase("yes");
+        String input;
+
+        while (true) {
+            System.out.print("Extra meat? yes/no: ");
+            input = scanner.nextLine().trim();
+
+            if (input.equalsIgnoreCase("yes") ||
+                    input.equalsIgnoreCase("no")) {
+                break;
+            }
+
+            System.out.println("Invalid option. Please enter yes or no.");
+        }
+
+        boolean extra = input.equalsIgnoreCase("yes");
 
         if (extra) {
             sandwich.addTopping(new Meat(meatType, true));
@@ -266,8 +292,21 @@ public class UserInterface {
 
         sandwich.addTopping(new Cheese(cheeseType, false));
 
-        System.out.print("Extra cheese? yes/no: ");
-        boolean extra = scanner.nextLine().equalsIgnoreCase("yes");
+        String input;
+
+        while (true) {
+            System.out.print("Extra cheese? yes/no: ");
+            input = scanner.nextLine().trim();
+
+            if (input.equalsIgnoreCase("yes") ||
+                    input.equalsIgnoreCase("no")) {
+                break;
+            }
+
+            System.out.println("Invalid option. Please enter yes or no.");
+        }
+
+        boolean extra = input.equalsIgnoreCase("yes");
 
         if (extra) {
             sandwich.addTopping(new Cheese(cheeseType, true));
@@ -426,9 +465,19 @@ public class UserInterface {
         System.out.println("\n=== Checkout ===");
         System.out.println(currentOrder);
 
-        System.out.print("Confirm order? yes/no: ");
-        String confirm = scanner.nextLine().trim();
+        String confirm;
 
+        while (true) {
+            System.out.print("Confirm order? yes/no: ");
+            confirm = scanner.nextLine().trim();
+
+            if (confirm.equalsIgnoreCase("yes") ||
+                    confirm.equalsIgnoreCase("no")) {
+                break;
+            }
+
+            System.out.println("Invalid option. Please enter yes or no.");
+        }
         if (confirm.equalsIgnoreCase("yes")) {
             ReceiptWriter writer = new ReceiptWriter();
             writer.saveReceipt(currentOrder);
@@ -436,7 +485,6 @@ public class UserInterface {
         } else {
             System.out.println("Order canceled.");
         }
-
-        currentOrder = null;
     }
 }
+
