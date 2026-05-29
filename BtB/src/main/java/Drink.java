@@ -1,14 +1,14 @@
 public class Drink {
-    private String size;
+    private DrinkSize size;
     private String flavor;
 
-    public Drink(String size, String flavor) {
+    public Drink(DrinkSize size, String flavor) {
         this.size = size;
         this.flavor = flavor;
     }
 
     //getters
-    public String getSize() {
+    public DrinkSize getSize() {
         return size;
     }
 
@@ -16,13 +16,12 @@ public class Drink {
         return flavor;
     }
 
-    //setters
-    public void setSize(String size) {
-        this.size = size;
+    public double calculatePrice() {
+        return size.getPrice();
     }
 
-    public void setFlavor(String flavor) {
-        this.flavor = flavor;
+    public String getDescription() {
+        return size + " " + flavor + " - $" + calculatePrice();
     }
 }
 

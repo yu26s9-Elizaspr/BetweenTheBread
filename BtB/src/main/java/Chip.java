@@ -4,7 +4,6 @@ public class Chip {
     public Chip (String type) {
         this.type = type;
     }
-
     // getters
     public String getType() {
         return type;
