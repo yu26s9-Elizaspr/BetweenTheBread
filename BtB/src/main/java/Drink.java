@@ -23,6 +23,11 @@ public class Drink {
     public String getDescription() {
         return size + " " + flavor + " - $" + calculatePrice();
     }
+    @Override
+    public String toString() {
+        return size + " " + flavor + " - $" +
+                String.format("%.2f", calculatePrice());
+    }
 }
 
 

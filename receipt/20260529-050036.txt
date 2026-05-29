@@ -1,0 +1,17 @@
+====================================
+         BETWEEN THE BREAD
+====================================
+Date: 2026-05-29T05:00:36.428498
+
+EIGHT_INCH sandwich on WHEAT bread
+Toasted: no
+Toppings: HAM, Extra HAM, AMERICAN, LETTUCE, TOMATOES, CUCUMBERS
+Sauces: MAYO, VINAIGRETTE
+Sides: SAUCE
+Price: $11.50
+
+LARGE pepsi - $3.00
+
+------------------------------------
+TOTAL: $14.50
+====================================

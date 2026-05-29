@@ -16,4 +16,9 @@ public class Chip {
     public double calculatePrice() {
         return 1.50;
     }
+    @Override
+    public String toString() {
+        return type + " - $" +
+                String.format("%.2f", calculatePrice());
+    }
 }
